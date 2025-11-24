@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Quiz Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Vocabulary Quiz Generator</h1>
+    </header>
+    <div class="container">
+        <!-- Mode Selection Screen -->
+        <div id="mode-screen" class="screen">
+            <h2>Choose your mode:</h2>
+            <div class="mode-selection-container">
+                <div id="level-mode-btn" class="btn mode-btn" role="button" tabindex="0">
+                    <div class="mode-image" id="level-mode-img"></div>
+                    <span>Level Mode</span>
+                </div>
+                <div id="custom-mode-btn" class="btn mode-btn" role="button" tabindex="0">
+                    <div class="mode-image" id="custom-mode-img"></div>
+                    <span>Custom Mode</span>
+                </div>
+            </div>
+            <div class="main-controls">
+                <button id="history-btn" class="btn">View History</button>
+            </div>
+        </div>
+
+        <!-- Level Selection Screen -->
+        <div id="level-screen" class="screen">
+            <h2>Choose your level:</h2>
+            <div id="level-buttons">
+                <!-- Level buttons will be generated here -->
+            </div>
+            <button class="btn btn-secondary back-btn">Back</button>
+        </div>
+
+        <!-- Custom Input Screen -->
+        <div id="custom-screen" class="screen">
+            <h2>Build Your Custom Quiz</h2>
+            <div id="custom-vocab-form">
+                <div class="form-row">
+                    <input type="text" id="custom-word-input" placeholder="Enter an English word">
+                </div>
+                <button id="add-word-btn" class="btn">Translate and Add</button>
+            </div>
+            <div id="custom-list-container">
+                <p id="custom-list-placeholder">Your words will appear here. Add at least 4 to start.</p>
+                <!-- Dynamically added words will go here -->
+            </div>
+            <div class="custom-screen-controls">
+                <button id="start-custom-quiz-btn" class="btn" disabled>Start Quiz</button>
+                <button class="btn btn-secondary back-btn">Back to Modes</button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <h2 id="question-title">Question 1/10</h2>
+                <div class="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+            <div class="quiz-content">
+                <div id="image-container" class="image-container">
+                    <!-- Image will be generated here -->
+                    <div class="placeholder-image">Image will appear here</div>
+                </div>
+                <div class="question-container">
+                    <p id="question-word" class="question-word"></p>
+                    <div id="choices-container" class="choices-container">
+                        <!-- Choice buttons will be generated here -->
+                    </div>
+                </div>
+            </div>
+            <p id="feedback" class="feedback"></p>
+            <div class="quiz-controls">
+                <button id="next-question-btn" class="btn">Next</button>
+                <button id="back-to-home-btn" class="btn btn-secondary">Back to Modes</button>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen">
+            <div class="result-screen-layout">
+                <h2 id="result-title"></h2>
+                <p id="result-score"></p>
+                <button id="restart-btn" class="btn">Back to Start</button>
+            </div>
+        </div>
+
+        <!-- History Screen (Now a Modal) -->
+        <div id="history-screen" class="screen">
+            <div class="history-screen-layout">
+                <h2>Quiz History</h2>
+                <div id="full-history-container">
+                    <!-- Full history will be generated here -->
+                </div>
+                <div class="history-controls">
+                    <button id="clear-history-btn" class="btn btn-danger">Clear All History</button>
+                    <button class="btn btn-secondary back-btn-modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="levels.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
